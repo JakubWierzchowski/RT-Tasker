@@ -1,14 +1,26 @@
 import { useState } from 'react';
+import { useAppDispatch } from '../lib/hooks';
+import { addUser } from '../features/user-slice';
 
 const CreateUser = () => {
-  const [realName, setRealName] = useState('');
-  const [alterEgo, setAlterEgo] = useState('');
+  const [newRealName, setNewRealName] = useState('');
+  const [newAlterEgo, setNewAlterEgo] = useState('');
+  const dispatch = useAppDispatch();
 
   return (
     <form
       className="create-user"
       onSubmit={(e) => {
         e.preventDefault();
+        const newUser: User = {
+          id: '',
+          tasks: [],
+          realName: newRealName,
+          alterEgo: newAlterEgo,
+        };
+        dispatch(addUser(newUser));
+        setNewRealName('');
+        setNewAlterEgo('');
       }}
     >
       <label htmlFor="new-user-real-name">
@@ -16,10 +28,10 @@ const CreateUser = () => {
         <input
           id="new-user-real-name"
           type="text"
-          value={realName}
+          value={newRealName}
           placeholder="Real Name"
           required
-          onChange={(e) => setRealName(e.target.value)}
+          onChange={(e) => setNewRealName(e.target.value)}
         />
       </label>
       <label htmlFor="new-user-alter-ego">
@@ -27,10 +39,10 @@ const CreateUser = () => {
         <input
           id="new-user-alter-ego"
           type="text"
-          value={alterEgo}
+          value={newAlterEgo}
           placeholder="Alter Ego"
           required
-          onChange={(e) => setAlterEgo(e.target.value)}
+          onChange={(e) => setNewAlterEgo(e.target.value)}
         />
       </label>
 

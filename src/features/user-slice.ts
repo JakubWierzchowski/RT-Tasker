@@ -10,9 +10,9 @@ const initialState: UsersState = {
   entities: data.users,
 };
 
-// type DraftUser = RequireOnly<User, 'realName' | 'alterEgo'>;
+type DraftUser = Required<Pick<User, 'realName' | 'alterEgo'>>;
 
-const createUser = (draftUser: any): User => {
+const createUser = (draftUser: DraftUser): User => {
   return { id: nanoid(), tasks: [], ...draftUser };
 };
 
