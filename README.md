@@ -1,5 +1,3 @@
-RT-Tasker to aplikacja webowa oparta na technologiach React, Typescript oraz Redux Toolkit. Aplikacja służy do dodawania użytkowniktów oraz pozwala na przeglądanie, dodawanie oraz usuwanie projektów. 
+RT-Tasker is a web application built with React, TypeScript, and Redux Toolkit. The application is used for adding users and allows for browsing, adding, and removing projects.
 
-Aplikacja wykorzystuje wiele funkcji React, takich jak hooki(również własne) oraz komponenty funkcyjne, a także wiele narzędzi dostarczonych przez 
-Redux Toolkit, takich jak stworzenie reduktora, akcji i selektorów.
-
+The application utilizes many React features, such as hooks (including custom ones) and functional components, as well as various tools provided by Redux Toolkit, such as creating reducers, actions, and selectors.
